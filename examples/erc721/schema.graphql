@@ -1,0 +1,12 @@
+type Token @entity {
+  id: String!
+  name: String!
+  owner: Account!
+  tokenUri: String!
+}
+
+type Account @entity {
+  id: String!
+  isOnAllowlist: Boolean!
+  tokens: [Token!]! @derivedFrom(field: "owner")
+}
