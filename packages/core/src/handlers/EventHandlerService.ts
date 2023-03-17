@@ -2,7 +2,6 @@ import Emittery from "emittery";
 import { decodeEventLog, encodeEventTopics, Hex } from "viem";
 
 import { createQueue, Queue, Worker } from "@/common/createQueue";
-import { MessageKind } from "@/common/LoggerService";
 import type { Log } from "@/common/types";
 import { Resources } from "@/Ponder";
 import { Handlers } from "@/reload/readHandlers";
@@ -267,10 +266,10 @@ export class EventHandlerService extends Emittery<EventHandlerServiceEvents> {
         }
 
         // TODO: Use the task arg to provide context to the user about the error.
-        this.resources.logger.logMessage(
-          MessageKind.ERROR,
-          "running event handlers" + ": " + error.message + `\n` + error.stack
-        );
+        this.resources.errors.submitHandlerError({
+          message: "running event handlers: " + error.message,
+          error: error,
+        });
       }
 
       this.emit("taskCompleted", { timestamp: Number(block.timestamp) });

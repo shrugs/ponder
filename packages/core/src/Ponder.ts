@@ -237,6 +237,13 @@ export class Ponder {
   }
 
   private registerUiHandlers() {
+    this.resources.errors.on("handlerError", ({ message, error }) => {
+      this.resources.logger.logMessage(
+        MessageKind.ERROR,
+        `${message}\n${error.stack}`
+      );
+    });
+
     this.frontfillService.on("networkConnected", (e) => {
       this.uiService.ui.networks.push(e.network);
     });
