@@ -118,6 +118,7 @@ export class TelemetryService {
 
   async kill() {
     this.queue.pause();
+    this.queue.clear();
     this.controller.abort();
     await this.queue.onIdle();
     this.flushDetached();
