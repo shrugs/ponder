@@ -142,7 +142,9 @@ query {
 
 ## Pagination
 
-The GraphQL API supports pagination through the `first` and `skip` arguments.
+### Offset pagination
+
+The GraphQL API natively supports offset pagination using the `first` and `skip` arguments.
 
 | Pagination option | Default | Max  |
 | :---------------- | :------ | :--- |
@@ -180,6 +182,25 @@ query {
   strongly consider writing a new query that fetches those items at the root
   level.
 </Callout>
+
+### Cursor pagination
+
+Ponder doesn't natively support cursor-based pagination, but you can use the `where` option to construct queries that implement cursor cursor pagination.
+
+```graphql filename="Query"
+query GetFoos($upToBlock: Int!, $previousCursor: Int!, $perBatch: Int!) {
+  foos(
+    first: $perBatch
+    where: { block_lte: $upToBlock, block_gte: $previousCursor }
+    orderBy: "block"
+    orderDirection: "asc"
+  ) {
+    id
+    block
+    foo
+  }
+}
+```
 
 ## Sorting
 
