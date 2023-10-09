@@ -10,5 +10,10 @@ export default defineConfig({
   test: {
     globalSetup: ["src/_test/globalSetup.ts"],
     setupFiles: ["src/_test/setup.ts"],
+    coverage: {
+      reporter: process.env.CI ? ["lcov"] : ["text", "json", "html"],
+      exclude: ["**/dist/**", "**/*.test.ts", "**/*.test-d.ts", "**/_test/**"],
+      all: true,
+    },
   },
 });
