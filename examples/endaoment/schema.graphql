@@ -1,0 +1,8 @@
+# see https://github.com/endaoment/endaoment-subgraph
+
+type NdaoEntity @entity {
+  id: String!
+
+  totalEthReceived: BigInt!
+  totalUsdcDonationsReceived: BigInt!
+}
