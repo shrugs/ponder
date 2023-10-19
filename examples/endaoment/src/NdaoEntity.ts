@@ -2,10 +2,10 @@ import { ponder } from "@/generated";
 
 ponder.on("OrgFundFactory:EntityDeployed", async ({ event, context }) => {
   const { NdaoEntity } = context.entities;
-  await NdaoEntity.upsert({
+
+  await NdaoEntity.create({
     id: event.params.entity,
-    create: { totalEthReceived: 0n, totalUsdcDonationsReceived: 0n },
-    update: {},
+    data: { totalEthReceived: 0n, totalUsdcDonationsReceived: 0n },
   });
 });
 

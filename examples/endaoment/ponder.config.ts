@@ -19,12 +19,14 @@ export const config: Config = {
       abi: "./abis/OrgFundFactory.json",
       address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
       startBlock: 15926225,
+      endBlock: 15983825,
     },
     {
       name: "NdaoEntity",
       network: "mainnet",
       abi: "./abis/NdaoEntity.json",
       startBlock: 15926225,
+      endBlock: 15983825,
       factory: {
         address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
         // this illustrates finding the event item from an existing abi
