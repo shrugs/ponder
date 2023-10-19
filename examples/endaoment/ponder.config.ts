@@ -14,12 +14,20 @@ export const config: Config = {
   ],
   contracts: [
     {
+      name: "OrgFundFactory",
+      network: "mainnet",
+      abi: "./abis/OrgFundFactory.json",
+      address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
+      startBlock: 15926225,
+    },
+    {
       name: "NdaoEntity",
       network: "mainnet",
       abi: "./abis/NdaoEntity.json",
-      startBlock: 15598433,
+      startBlock: 15926225,
       factory: {
         address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
+        // this illustrates finding the event item from an existing abi
         event: OrgFundFactoryAbi.find(
           (item) => item.name === "EntityDeployed"
         ) as AbiEvent,
