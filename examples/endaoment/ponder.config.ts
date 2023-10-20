@@ -26,7 +26,8 @@ export const config: Config = {
       network: "mainnet",
       abi: "./abis/NdaoEntity.json",
       startBlock: 15926225,
-      endBlock: 15983825,
+      // endBlock: 15983825,
+      // ^ just for example, we stop here, but you could keep going
       factory: {
         address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
         // this illustrates finding the event item from an existing abi
