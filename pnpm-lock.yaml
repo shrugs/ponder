@@ -154,7 +154,7 @@ importers:
   examples/endaoment:
     dependencies:
       '@ponder/core':
-        specifier: ^0.0.92
+        specifier: workspace:latest
         version: link:../../packages/core
     devDependencies:
       '@types/node':
@@ -167,7 +167,7 @@ importers:
         specifier: ^8.43.0
         version: 8.43.0
       eslint-config-ponder:
-        specifier: ^0.0.92
+        specifier: workspace:latest
         version: link:../../packages/eslint-config-ponder
       typescript:
         specifier: ^5.1.3

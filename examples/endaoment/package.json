@@ -1,4 +1,5 @@
 {
+  "name": "ponder-example-endaoment",
   "private": true,
   "scripts": {
     "dev": "ponder dev",
@@ -7,13 +8,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@ponder/core": "^0.0.92"
+    "@ponder/core": "workspace:latest"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "abitype": "^0.8.11",
     "eslint": "^8.43.0",
-    "eslint-config-ponder": "^0.0.92",
+    "eslint-config-ponder": "workspace:latest",
     "typescript": "^5.1.3",
     "viem": "^1.2.6"
   }
