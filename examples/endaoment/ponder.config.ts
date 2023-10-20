@@ -13,14 +13,14 @@ export const config: Config = {
     },
   ],
   contracts: [
-    {
-      name: "OrgFundFactory",
-      network: "mainnet",
-      abi: "./abis/OrgFundFactory.json",
-      address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
-      startBlock: 15926225,
-      endBlock: 15983825,
-    },
+    // {gs
+    //   name: "OrgFundFactory",
+    //   network: "mainnet",
+    //   abi: "./abis/OrgFundFactory.json",
+    //   address: "0x10fD9348136dCea154F752fe0B6dB45Fc298A589",
+    //   startBlock: 15926225,
+    //   endBlock: 15983825,
+    // },
     {
       name: "NdaoEntity",
       network: "mainnet",
